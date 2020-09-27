@@ -2,7 +2,7 @@
   "name": "node.js_review",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/04.index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/iris-yu17/node.js_review/issues"
   },
-  "homepage": "https://github.com/iris-yu17/node.js_review#readme"
+  "homepage": "https://github.com/iris-yu17/node.js_review#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

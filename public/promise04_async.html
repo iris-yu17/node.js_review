@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        function myfunc1(n) {
+            return new Promise((resolve, reject) => {
+                setTimeout(function () {
+                    resolve(n * n);
+                }, 2000);
+            });
+        }
+
+        function myfunc2(n) {
+            return new Promise((resolve, reject) => {
+                setTimeout(function () {
+                    resolve(n * n);
+                }, 3000);
+            });
+        }
+
+        // 呼叫匿名函式:用括號包起來
+        // (function(){
+        //   blablablabla
+        // })()
+
+        // async 本身也是類似 Promise
+        // await只能用在有用async宣告的func，await後面一定是放一個promise
+        // async:非同步，但他能夠將await包在裡面，被包在裡面的await會上往下依序執行(看起來像是同步)
+
+
+        (async () => {
+            const r1 = await myfunc2(7);
+            console.log(r1);
+            const r2 = await myfunc1(9);
+            console.log(r2);
+        })()
+
+
+
+
+
+    </script>
+</body>
+
+</html>

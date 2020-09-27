@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(function () {
+                // resolve('aaa');
+                // 若錯誤，就不會進到下面的then，會到catch
+                reject('error-1');
+            }, 2000);
+        });
+
+        p1.then(r => {
+            console.log(r)
+            // 若沒有return r2就會是unefined
+            // return "123"
+        })
+            .then(r2 => {
+                console.log(r2)
+            })
+
+            // reject
+            // catch不能放前面，(若放前面跑完catch後會再執行then)
+            .catch(exc=>{
+                console.log("exception:", exc)
+            })
+
+        console.log("-----1-----")
+
+
+
+    </script>
+</body>
+
+</html>

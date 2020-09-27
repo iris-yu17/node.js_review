@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        const p1 = new Promise((resolve, reject) => {
+
+            // 用setTimeout模擬要花時間的狀況
+            setTimeout(function () {
+                // 2秒鐘後呼叫resolve  
+                // 若呼叫resolve，就會進到下面的then
+                resolve('aaa');
+                // 2秒鐘
+            }, 2000);
+
+        });
+
+        // then要自己定義，裡面是另外一個cb funct
+        // r = 'aaa'
+        p1.then(r => {
+            console.log(r)
+            // 若沒有return r2就會是unefined
+            // return "123"
+        })
+            .then(r2 => {
+                console.log(r2)
+            })
+
+        console.log("-----1-----")
+
+        // 開f12看
+        // console.log("-----1-----")會先執行
+        // console.log(r)等上面跑完才做
+
+    </script>
+</body>
+
+</html>
