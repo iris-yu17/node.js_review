@@ -13,6 +13,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {
         // content-type設為純文字
         // 'Content-Type': 'text/plain'
+        
         // content-type設為html
         'Content-Type': 'text/html'
 
