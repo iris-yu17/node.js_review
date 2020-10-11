@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/iris-yu17/node.js_review#readme",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1"
   }
 }
