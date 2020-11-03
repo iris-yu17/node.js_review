@@ -28,6 +28,7 @@ app.use(express.json());
 
 //----------路由------------//
 // step3. 設定路由，類似http.createServer
+// 設定路由，然後後面的(req, res) => {} cb func去處理
 // get是html方法
 app.get('/', (req, res) => {
     // send: 輸出html文字
@@ -75,10 +76,12 @@ app.post('/try-post', (req, res) => {
 
 //----------靜態內容------------//
 // 使用靜態內容的資料夾，原則上放404頁前面
-// 靜態: 後端完全不會去改變到其內容
+// 靜態: 後端完全不會去改變到其內容eg.html,css,js檔(除非js檔是後端生出來的)
 // 動態: 後端生出來的(eg.404頁面)
 // 作法: 呼叫express的static方法
 // 這也是一個middleWare(在中間處理，處裡完往下傳遞)
+// public裡面所有東西都靜態，"localhost:5000/檔名"就可以看到內容
+// 例: localhost:5000/01.promise01.html
 app.use(express.static(__dirname + '/../public'))
 
 
@@ -96,6 +99,6 @@ app.use((req, res) => {
 
 // step4. Server 偵聽
 // 後面可放個cb func，啟動以後會去呼叫它
-app.listen(3000, function () {
-    console.log("埠號:3000，伺服器已啟動...");
+app.listen(5000, function () {
+    console.log("埠號:5000，伺服器已啟動...");
 })

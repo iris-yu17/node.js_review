@@ -21,6 +21,7 @@ function myWriteFile(path, content) {
 
 }
 
+// 可直接在匿名函式宣告async
 const server = http.createServer(async (req, res) => {
 
     const msg = await myWriteFile(
